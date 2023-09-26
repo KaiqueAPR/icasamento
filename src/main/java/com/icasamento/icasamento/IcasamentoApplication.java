@@ -8,6 +8,7 @@ public class IcasamentoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(IcasamentoApplication.class, args);
+        String teste = "teste";
     }
 
 }
