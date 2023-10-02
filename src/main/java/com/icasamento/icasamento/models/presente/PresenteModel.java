@@ -1,5 +1,6 @@
-package com.icasamento.icasamento.models;
+package com.icasamento.icasamento.models.presente;
 
+import com.icasamento.icasamento.models.tipopresente.TipoPresenteModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
