@@ -34,7 +34,7 @@ public class ConvidadoService {
     public Page<ConvidadoResponseDto> listaConvidados(Pageable pageable) {
         Page<ConvidadoModel> all = convidadoRepository.findAll(pageable);
         ModelMapper modelMapper = new ModelMapper();
-        return new PageImpl<>(all.stream().map(clienteModel -> modelMapper.map(clienteModel, ConvidadoResponseDto.class)).collect(Collectors.toList()));
+        return new PageImpl<>(all.stream().map(convidadoModel -> modelMapper.map(convidadoModel, ConvidadoResponseDto.class)).collect(Collectors.toList()));
     }
 
     /*Método responsável por achar um Convidado atráves da variável 'cdConvidado'*/

@@ -1,5 +1,7 @@
 package com.icasamento.icasamento.configs;
 
+import com.icasamento.icasamento.configs.exceptions.ConvidadoAlreadyExists;
+import com.icasamento.icasamento.configs.exceptions.ConvidadoNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.validation.FieldError;
@@ -38,6 +40,24 @@ public class GlobalExceptionHandler {
         ProblemDetail problemDetail =
                 ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, e.getLocalizedMessage());
         problemDetail.setTitle("Erro interno do servidor");
+        problemDetail.setDetail(e.getMessage());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(ConvidadoNotFound.class)
+    ProblemDetail handleConvidadoNotFoundException(ConvidadoNotFound e) {
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, e.getLocalizedMessage());
+        problemDetail.setTitle("Convidado não encontrado");
+        problemDetail.setDetail(e.getMessage());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(ConvidadoAlreadyExists.class)
+    ProblemDetail handleConvidadoAlreadyExistsException(ConvidadoAlreadyExists e) {
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getLocalizedMessage());
+        problemDetail.setTitle("Convidado já existe");
         problemDetail.setDetail(e.getMessage());
         return problemDetail;
     }
