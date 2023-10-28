@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <title>iCasamento - Login</title>
+</head>
+
+<body>
+
+    <div class="divCentral">
+
+        <form id="formularioLogin" method="post" class="form-control">
+
+            <div class="form-label">
+                <h1 id="labelFormLogin">iCasamento</h1>
+            </div>
+
+            <div id="divInputs">
+                <div class="divInputMail">
+                    <label for="txEmail" class="form-label">Endereço de E-mail</label>
+                    <input class="form-control" type="email" name="txEmail" id="txEmail"
+                        placeholder="exemplo@gmail.com">
+                </div>
+
+                <div id="divInputSenha">
+                    <label for="inputPassword5" class="form-label">Senha</label>
+                    <input type="password" id="txSenha" class="form-control" aria-describedby="passwordHelpBlock">
+                </div>
+                <div id="passwordHelpBlock" class="form-text">
+                    Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços,
+                    caracteres
+                    especiais ou emoji.
+                </div>
+            </div>
+
+            <div id="divBtnEntrar">
+                <button id="btnEntrar" type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>

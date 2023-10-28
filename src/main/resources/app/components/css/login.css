@@ -1,0 +1,76 @@
+/* Configurações do Body da página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centralize horizontalmente */
+    align-items: center;
+    /* Centralize verticalmente */
+    width: 100vw;
+    /* 100% da largura da viewport */
+    height: 100vh;
+    /* 100% da altura da viewport */
+    background: #84B6F4;
+}
+
+/* Configurações da div central */
+.divCentral {
+    background: #FFFFFF;
+
+    border-radius: 5%;
+    /*!!!!Voltar aqui para ver qual tipo de border radius ficaria melhor!!!!*/
+}
+
+/* Configurações do formulário de login */
+#formularioLogin {
+    width: 348px;
+    height: 534px;
+}
+
+#labelFormLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#labelFormLogin{
+    padding-top: 10%;
+}
+#divInputs{
+    padding-top: 10%;
+}
+
+#txEmail {
+    width: 275px;
+    height: 36.96px;
+    border-radius: 15px;
+    border-color: #84B6F4;
+}
+
+#divInputSenha{
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+#txSenha {
+    width: 275px;
+    height: 36.96px;
+    border-radius: 15px;
+    border-color: #84B6F4;
+}
+
+#passwordHelpBlock {
+    margin-bottom: 15%;
+}
+
+#divBtnEntrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnEntrar{
+    padding-left: 25%;
+    padding-right:25%;
+}
