@@ -34,30 +34,31 @@ body {
     align-items: center;
 }
 
-#labelFormLogin{
+#labelFormLogin {
     padding-top: 10%;
 }
-#divInputs{
+
+#divInputs {
     padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #txEmail {
-    width: 275px;
-    height: 36.96px;
-    border-radius: 15px;
+    font-size: 17px;
+    padding: 14px 16px;
     border-color: #84B6F4;
-}
-
-#divInputSenha{
-    padding-top: 10px;
-    padding-bottom: 8px;
 }
 
 #txSenha {
-    width: 275px;
-    height: 36.96px;
-    border-radius: 15px;
+    font-size: 17px;
+    padding: 14px 16px;
     border-color: #84B6F4;
+}
+
+#divInputSenha {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #passwordHelpBlock {
@@ -70,7 +71,7 @@ body {
     align-items: center;
 }
 
-#btnEntrar{
-    padding-left: 25%;
-    padding-right:25%;
+#btnEntrar {
+    padding: 14px 16px;
+    width: 290px;
 }
