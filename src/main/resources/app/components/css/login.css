@@ -66,6 +66,7 @@ body {
 }
 
 #divBtnEntrar {
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,4 +75,14 @@ body {
 #btnEntrar {
     padding: 14px 16px;
     width: 290px;
+}
+
+#divParagrafoOu {
+    padding-top: 10px;
+}
+
+#divCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
