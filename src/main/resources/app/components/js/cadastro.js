@@ -1,4 +1,4 @@
-/* Requisição HTTP do método GRAVAR no backend */
+/* Requisição HTTP do método GRAVAR no backend
 document.getElementById("btnGravar").addEventListener("click", function () {
     fetch('/novo', {
         method: 'POST',
@@ -11,4 +11,4 @@ document.getElementById("btnGravar").addEventListener("click", function () {
         .catch(error => {
             console.error('Erro:', error);
         });
-});
+});*/
