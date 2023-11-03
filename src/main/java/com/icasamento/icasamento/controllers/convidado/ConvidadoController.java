@@ -20,6 +20,11 @@ public class ConvidadoController {
         this.convidadoService = convidadoService;
     }
 
+    @RequestMapping("")
+    public void login() {
+
+    }
+
     @GetMapping
     public Page<ConvidadoResponseDto> lista(@PageableDefault(page = 0, size = 10, sort = "cdConvidado", direction = Sort.Direction.ASC) Pageable pageable) {
         return convidadoService.listaConvidados(pageable);
