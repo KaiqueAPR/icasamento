@@ -24,8 +24,9 @@ body {
 
 /* Configurações do formulário de login */
 #formularioCadastro {
-    width: 348px;
+    width: 534px;
     height: 534px;
+    float:left;
 }
 
 #labelFormCadastro {
@@ -42,9 +43,30 @@ body {
     padding-top: 10%;
     padding-left: 5%;
     padding-right: 5%;
+    display:inline;
+}
+
+#txNome {
+    font-size: 17px;
+    padding: 14px 16px;
+    border-color: #84B6F4;
+    float:left;
+
 }
 
 #txEmail {
+    font-size: 17px;
+    padding: 14px 16px;
+    border-color: #84B6F4;
+}
+
+#nrTelefone {
+    font-size: 17px;
+    padding: 14px 16px;
+    border-color: #84B6F4;  
+}
+
+#txCpf {
     font-size: 17px;
     padding: 14px 16px;
     border-color: #84B6F4;
@@ -56,24 +78,13 @@ body {
     border-color: #84B6F4;
 }
 
-#divInputSenha {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#mensagem {
-    margin-bottom: 15%;
-}
-
-#divBtnEntrar {
-    padding-top: 10px;
+#divBtnCriarConta {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#btnEntrar {
-    padding: 14px 16px;
+#btnCriarConta {
     width: 290px;
 }
 
@@ -85,4 +96,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group .divTxNome,
+.input-group .divTxEmail,
+.input-group .divNrTelefone,
+.input-group .divTxCpf {
+    flex: 1;
+    margin-right: 10px;
 }
