@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const txCpf = document.getElementById("txCpf").value;
         const cdSenha = document.getElementById("cdSenha").value;
 
-        // Crie um objeto com os dados para enviar como JSON.
+        // Objeto com os dados para enviar como JSON.
         const dados = {
             nmConvidado,
             nmEmail,
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             cdSenha,
         };
 
-        // Faça a solicitação POST usando fetch.
         fetch("/convidado/novo", {
             method: "POST",
             headers: {
@@ -30,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((data) => {
-                // Manipule a resposta do servidor, se necessário.
                 console.log(data);
-                // Você pode redirecionar o usuário para outra página, exibir uma mensagem de sucesso, etc.
             })
             .catch((error) => {
                 // Lidar com erros de solicitação.
