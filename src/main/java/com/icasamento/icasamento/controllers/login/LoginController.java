@@ -1,6 +1,7 @@
 package com.icasamento.icasamento.controllers.login;
 
 import com.icasamento.icasamento.dtos.login.LoginRequestDto;
+import com.icasamento.icasamento.dtos.login.LoginResponseDto;
 import com.icasamento.icasamento.services.login.LoginService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping("/entrar")
-    public Boolean entrar(@RequestBody @Valid LoginRequestDto loginRequestDTO) {
+    public LoginResponseDto entrar(@RequestBody @Valid LoginRequestDto loginRequestDTO) {
         return loginService.login(loginRequestDTO.getNmEmail(), loginRequestDTO.getCdSenha());
     }
 

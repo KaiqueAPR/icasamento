@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Redireciona para a página "home.html".
                     window.location.href = "home.html";
                 } else {
-                    console.log("E-mail ou Senha errados.");
+                    console.error(data);
                 }
             })
             .catch((error) => {

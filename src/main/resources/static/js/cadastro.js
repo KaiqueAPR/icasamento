@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
+                if (data != true) {
+                    window.location.href = "login.html";
+                }
             })
             .catch((error) => {
                 // Lidar com erros de solicitação.
@@ -39,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function validarSenha() {
+/**function validarSenha() {
     const senha = document.getElementById("cdSenha").value;
 
     if (senha.length < 8 || !/[A-Z]/.test(senha) || !/[a-z]/.test(senha) || !/\d/.test(senha)) {
@@ -49,4 +52,4 @@ function validarSenha() {
         document.getElementById("mensagem").textContent = "Senha válida!";
         return true; // Permite o envio do formulário
     }
-}
+}**/
