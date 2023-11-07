@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cadastro.css" type="text/css">
+    <title>iCasamento - Cadastro</title>
+</head>
+
+<body>
+
+    <div class="divCentral">
+
+        <form id="formularioCadastro" method="post" class="form-control"> <!-- onsubmit="return validarSenha()" -->>
+
+            <div class="form-label">
+
+                <h1 id="labelFormCadastro">iCasamento</h1>
+
+            </div>
+            <!-- DIV referente a todos os campos que o usuário precisa preencher -->
+            <div id="divInputs">
+
+                <!-- Grupo 1: Nome -->
+
+                <div class="divNmConvidado">
+                    <label for="nmConvidado">Nome Completo:</label>
+                    <input type="text" id="nmConvidado" class="form-control">
+                </div>
+
+                <!-- Grupo 2: E-mail -->
+
+                <div class="divNmEmail">
+                    <label for="nmEmail">E-mail:</label>
+                    <input type="email" id="nmEmail" class="form-control">
+                </div>
+
+
+                <!-- Grupo 3: Telefone e CPF -->
+                <div class="input-group">
+                    <div class="divNrTelefone">
+                        <label for="nrTelefone">Telefone:</label>
+                        <input type="tel" id="nrTelefone" class="form-control">
+                    </div>
+                    <div class="divTxCpf">
+                        <label for="txCpf">CPF:</label>
+                        <input type="text" id="txCpf" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Campo de Senha do usuário que está se cadastrando -->
+                <div id="divInputSenha">
+                    <label for="txSenha" class="form-label">Senha</label>
+                    <input type="password" id="cdSenha" class="form-control" aria-describedby="passwordHelpBlock">
+                </div>
+
+                <p id="mensagem" class="form-text">
+                </p>
+
+            </div>
+
+            <div id="divBtnCriarConta">
+                <button id="btnCriarConta" type="submit" class="btn btn-primary"><b>Criar Conta</b></button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/cadastro.js"></script>
+</body>
+
+</html>
