@@ -5,16 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Evita o comportamento padrão de envio do formulário.
 
         // Captura os dados do formulário.
-        const txNome = document.getElementById("txNome").value;
-        const txEmail = document.getElementById("txEmail").value;
+        const nmConvidado = document.getElementById("nmConvidado").value;
+        const nmEmail = document.getElementById("nmEmail").value;
         const nrTelefone = document.getElementById("nrTelefone").value;
         const txCpf = document.getElementById("txCpf").value;
         const cdSenha = document.getElementById("cdSenha").value;
 
         // Crie um objeto com os dados para enviar como JSON.
         const dados = {
-            txNome,
-            txEmail,
+            nmConvidado,
+            nmEmail,
             nrTelefone,
             txCpf,
             cdSenha,
