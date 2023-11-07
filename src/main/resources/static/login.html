@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <title>iCasamento - Login</title>
+</head>
+
+<body>
+
+    <div class="divCentral">
+
+        <form id="formularioLogin" method="post" onsubmit="return validarSenha()" class="form-control"
+            action="login.html">
+
+            <div class="form-label">
+
+                <h1 id="labelFormLogin">iCasamento</h1>
+
+            </div>
+
+            <div id="divInputs">
+
+                <div class="divInputMail">
+
+                    <label for="txEmail" class="form-label">Endereço de E-mail</label>
+                    <input class="form-control" type="email" name="txEmail" id="txEmail"
+                        placeholder="exemplo@gmail.com">
+
+                </div>
+
+                <div id="divInputSenha">
+
+                    <label for="txSenha" class="form-label">Senha</label>
+                    <input type="password" id="txSenha" class="form-control" aria-describedby="passwordHelpBlock">
+
+                </div>
+
+                <p id="mensagem" class="form-text">
+                </p>
+
+            </div>
+
+            <div id="divBtnEntrar">
+                <button id="btnEntrar" type="submit" class="btn btn-primary"><b>Entrar</b></button>
+            </div>
+
+            <div id="divParagrafoOu">
+                <p style="align-items: center; text-align: center;">Ou</p>
+            </div>
+
+            <div id="divCadastro">
+                <a href="cadastro.html" class="btn btn-secondary">Cadastre-se</a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>
