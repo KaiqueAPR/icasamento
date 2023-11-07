@@ -1,11 +1,41 @@
-function validarSenha() {
-    const senha = document.getElementById("txSenha").value;
+document.addEventListener("DOMContentLoaded", function () {
+    const formularioLogin = document.getElementById("formularioLogin");
 
-    if (senha.length < 8 || !/[A-Z]/.test(senha) || !/[a-z]/.test(senha) || !/\d/.test(senha)) {
-        document.getElementById("mensagem").textContent = "A senha não atende aos critérios de validação.";
-        return false; // Impede o envio do formulário
-    } else {
-        document.getElementById("mensagem").textContent = "Senha válida!";
-        return true; // Permite o envio do formulário
-    }
-}
+    formularioLogin.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita o comportamento padrão de envio do formulário.
+
+        // Captura os dados do formulário.
+        const nmEmail = document.getElementById("nmEmail").value;
+        const cdSenha = document.getElementById("cdSenha").value;
+
+        // Objeto com os dados para enviar como JSON.
+        const dados = {
+            nmEmail,
+            cdSenha,
+        };
+
+        fetch("/login/entrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dados),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data === true) {
+                    // Redireciona para a página "home.html".
+                    window.location.href = "home.html";
+                } else {
+                    console.log("E-mail ou Senha errados.");
+                }
+            })
+            .catch((error) => {
+                // Lidar com erros de solicitação.
+                console.error("Erro na solicitação:", error);
+                // Exibir uma mensagem de erro ou realizar outra ação apropriada.
+            });
+    });
+});
+
