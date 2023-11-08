@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
             cdSenha,
         };
 
+        // Desativa a rolagem da página
+        document.body.style.overflow = "hidden";
+
         fetch("/login/entrar", {
             method: "POST",
             headers: {
@@ -29,13 +32,24 @@ document.addEventListener("DOMContentLoaded", function () {
                     window.location.href = "home.html";
                 } else {
                     console.error(data);
+
+                    Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "Algo deu errado...",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        onClose: () => {
+                            // Reativa a rolagem da página após o SweetAlert ser fechado.
+                            document.body.style.overflow = "auto";
+                        },
+                    });
+                    
                 }
             })
             .catch((error) => {
                 // Lidar com erros de solicitação.
                 console.error("Erro na solicitação:", error);
-                // Exibir uma mensagem de erro ou realizar outra ação apropriada.
             });
     });
 });
-

@@ -12,55 +12,59 @@
 
 <body>
 
-    <div class="divCentral">
+    <div id="divContainer">
 
-        <!-- Formulário referente ao login do usuário -->
-        <form id="formularioLogin" method="post" class="form-control" action="login.html">
+        <div class="divCentral">
 
-            <div class="form-label">
+            <!-- Formulário referente ao login do usuário -->
+            <form id="formularioLogin" method="post" class="form-control" action="login.html">
 
-                <!-- Título do formulário de login de usuário -->
-                <h1 id="labelFormLogin">iCasamento</h1>
+                <div class="form-label">
 
-            </div>
-
-            <div id="divInputs">
-
-                <!-- DIV referente ao campo de E-mail do usuário -->
-                <div class="divInputMail">
-
-                    <label for="nmEmail" class="form-label">Endereço de E-mail</label>
-                    <input class="form-control" type="email" name="nmEmail" id="nmEmail"
-                        placeholder="exemplo@gmail.com">
+                    <!-- Título do formulário de login de usuário -->
+                    <h1 id="labelFormLogin">iCasamento</h1>
 
                 </div>
 
-                <!-- DIV referente ao campo de Senha do usuário -->
-                <div id="divInputSenha">
+                <div id="divInputs">
 
-                    <label for="cdSenha" class="form-label">Senha</label>
-                    <input type="password" id="cdSenha" class="form-control" aria-describedby="passwordHelpBlock">
+                    <!-- DIV referente ao campo de E-mail do usuário -->
+                    <div class="divInputMail">
+
+                        <label for="nmEmail" class="form-label">Endereço de E-mail</label>
+                        <input class="form-control" type="email" name="nmEmail" id="nmEmail"
+                            placeholder="exemplo@gmail.com">
+
+                    </div>
+
+                    <!-- DIV referente ao campo de Senha do usuário -->
+                    <div id="divInputSenha">
+
+                        <label for="cdSenha" class="form-label">Senha</label>
+                        <input type="password" id="cdSenha" class="form-control" aria-describedby="passwordHelpBlock">
+
+                    </div>
 
                 </div>
 
-            </div>
+                <!-- DIV referente ao botão de Entrar -->
+                <div id="divBtnEntrar">
+                    <button id="btnEntrar" type="submit" class="btn btn-primary"><b>Entrar</b></button>
+                </div>
 
-            <!-- DIV referente ao botão de Entrar -->
-            <div id="divBtnEntrar">
-                <button id="btnEntrar" type="submit" class="btn btn-primary"><b>Entrar</b></button>
-            </div>
+                <!-- DIV referente a palavra "Ou" que separa os dois botões -->
+                <div id="divParagrafoOu">
+                    <p style="align-items: center; text-align: center;">Ou</p>
+                </div>
 
-            <!-- DIV referente a palavra "Ou" que separa os dois botões -->
-            <div id="divParagrafoOu">
-                <p style="align-items: center; text-align: center;">Ou</p>
-            </div>
+                <!-- DIV referente ao botão de Cadastro -->
+                <div id="divCadastro">
+                    <a href="cadastro.html" class="btn btn-secondary">Cadastre-se</a>
+                </div>
 
-            <!-- DIV referente ao botão de Cadastro -->
-            <div id="divCadastro">
-                <a href="cadastro.html" class="btn btn-secondary">Cadastre-se</a>
-            </div>
+            </form>
 
-        </form>
+        </div>
 
     </div>
 

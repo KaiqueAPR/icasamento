@@ -53,3 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return true; // Permite o envio do formulário
     }
 }**/
+
+Swal.fire({
+    position: "center",
+    icon: "error",
+    title: "Algo deu errado...",
+    showConfirmButton: false,
+    timer: 1500,
+    onClose: () => {
+        // Reativa a rolagem da página após o SweetAlert ser fechado.
+        document.body.style.overflow = "auto";
+    },
+});
