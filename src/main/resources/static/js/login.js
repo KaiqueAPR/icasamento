@@ -31,20 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Redireciona para a página "home.html".
                     window.location.href = "home.html";
                 } else {
-                    console.error(data);
-
                     Swal.fire({
                         position: "center",
                         icon: "error",
-                        title: "Algo deu errado...",
+                        title: "E-mail ou Senha estão incorretos",
                         showConfirmButton: false,
                         timer: 1500,
-                        onClose: () => {
-                            // Reativa a rolagem da página após o SweetAlert ser fechado.
-                            document.body.style.overflow = "auto";
-                        },
                     });
-                    
+
                 }
             })
             .catch((error) => {

@@ -15,7 +15,7 @@
     <div id="divContainer">
         <div class="divCentral">
 
-            <form id="formularioCadastro" method="post" class="form-control"> <!-- onsubmit="return validarSenha()" -->
+            <form id="formularioCadastro" method="post" class="form-control" onsubmit="return validarFormulario()">
 
                 <div class="form-label">
 
@@ -29,14 +29,14 @@
 
                     <div class="divNmConvidado">
                         <label for="nmConvidado">Nome Completo:</label>
-                        <input type="text" id="nmConvidado" class="form-control">
+                        <input type="text" id="nmConvidado" class="form-control" required>
                     </div>
 
                     <!-- Grupo 2: E-mail -->
 
                     <div class="divNmEmail">
                         <label for="nmEmail">E-mail:</label>
-                        <input type="email" id="nmEmail" class="form-control">
+                        <input type="email" id="nmEmail" class="form-control" required>
                     </div>
 
 
@@ -44,21 +44,24 @@
                     <div class="input-group">
                         <div class="divNrTelefone">
                             <label for="nrTelefone">Telefone:</label>
-                            <input type="tel" id="nrTelefone" class="form-control">
+                            <input type="tel" id="nrTelefone" class="form-control" oninput="formatPhoneNumber(this)"
+                                maxlength="15" required>
                         </div>
                         <div class="divTxCpf">
                             <label for="txCpf">CPF:</label>
-                            <input type="text" id="txCpf" class="form-control">
+                            <input type="text" id="txCpf" class="form-control" maxlength="14" oninput="formatCPF(this)"
+                                required>
                         </div>
                     </div>
 
                     <!-- Campo de Senha do usuário que está se cadastrando -->
                     <div id="divInputSenha">
                         <label for="txSenha" class="form-label">Senha</label>
-                        <input type="password" id="cdSenha" class="form-control" aria-describedby="passwordHelpBlock">
+                        <input type="password" id="cdSenha" class="form-control" aria-describedby="passwordHelpBlock"
+                            required>
                     </div>
 
-                    <p id="mensagem" class="form-text">
+                    <p id="mensagemSenha" class="form-text">
                     </p>
 
                 </div>

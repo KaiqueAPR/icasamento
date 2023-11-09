@@ -112,3 +112,8 @@
     flex: 1;
     margin-right: 10px;
 }
+
+#mensagemSenha {
+    color: red;
+    font-size: 0.8rem;
+}
