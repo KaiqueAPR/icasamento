@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const formularioCadastro = document.getElementById("formularioCadastro");
 
+    const senha = document.getElementById("cdSenha")
+
+    senha.addEventListener("input", function (event) {
+        event.preventDefault();
+        validarFormulario();
+    });
+
     formularioCadastro.addEventListener("submit", function (event) {
+
         event.preventDefault(); // Evita o comportamento padrão de envio do formulário.
 
         // Captura os dados do formulário.
@@ -63,16 +71,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validarFormulario() {
-    const senha = document.getElementById("cdSenha").value;
+    const senha = document.getElementById("cdSenha");
+    const senhaValor = senha.value;
 
-    if (senha.length < 8 || !/[A-Z]/.test(senha) || !/[a-z]/.test(senha) || !/\d/.test(senha)) {
-        document.getElementById("mensagemSenha").textContent = "A senha deve conter mais de 8 caracteres, letras minúsculas e maiúsculas.";
-        return false; // Impede o envio do formulário
-    } else {
-        document.getElementById("mensagemSenha").textContent = "Senha válida!";
-        return true; // Permite o envio do formulário
+    if (senhaValor.length < 8 || !/[A-Z]/.test(senhaValor) || !/[a-z]/.test(senhaValor) || !/\d/.test(senhaValor)) {
+        senha.setCustomValidity("A senha deve conter mais de 8 caracteres, letras minúsculas e maiúsculas.");
+        return false;
     }
+    senha.setCustomValidity("");
+    return true;
 }
+
 
 function formatPhoneNumber(input) {
     // Remove todos os caracteres não numéricos do valor de entrada
