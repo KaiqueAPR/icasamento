@@ -9,95 +9,128 @@
     <link rel="stylesheet" href="css/home.css" type="text/css">
 
     <title>iCasamento - Home</title>
+    
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border: 1px solid #ccc;">
+        <a class="navbar-brand text-primary" href="#"><b>iCasamento</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="# ">Escolher Data <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Convidados </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Localização </a>
+                </li>
+        </div>
+    </nav>
+
     <div id="divContainer">
-        <div>
-            <h1 id="iCasamentoTitulo">iCasamento</h1>
-        </div>
 
-        <!-- DIV que se refere ao COLAPSE -->
-        <div id="accordion">
+        <form>
+            <!-- DIV que se refere ao COLAPSE -->
+            <div id="accordion">
 
-            <!-- INICIO: DIV do primeiro COLAPSE referente a data -->
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            <b id="tituloColapseData">Escolher a Data</b>
-                        </button>
-                    </h5>
-                </div>
+                <!-- INICIO: DIV do primeiro COLAPSE referente a data -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne" type="button">
+                                <b id="tituloColapseData">Escolher a Data</b>
+                            </button>
+                        </h5>
+                    </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body" id="divDtCasamento">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body" id="divDtCasamento">
 
-                        <div>
-                            <h2 id="subtituloColapseData">Defina uma data para o seu casamento:</h2>
+                            <div>
+                                <h2 id="subtituloColapseData">Defina uma data para o seu casamento:</h2>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="date" id="dtCasamento">
+                            </div>
+
                         </div>
+                    </div>
+                </div>
+                <!-- FIM: DIV do primeiro COLAPSE referente a data -->
 
-                        <div class="form-group">
-                            <input type="date" id="dtCasamento">
+                <!-- INICIO: DIV do segundo COLAPSE referente a quantidade de convidados -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo" type="button">
+                                <b id="tituloColapseConvidados">Convidados</b>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+
+                            <div>
+                                <h2 id="subtituloColapseConvidados">Defina a quantidade de convidados:</h2>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" id="qtdConvidados">
+                            </div>
+
                         </div>
+                    </div>
+                </div>
+                <!-- FIM: DIV do segundo COLAPSE referente a quantidade de convidados -->
 
+                <!-- INICIO: DIV do terceiro COLAPSE referente ao estado -->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree" type="button">
+                                <b id="tituloColapseLocalizacao">Localização</b>
+                            </button>
+                        </h5>
                     </div>
-                </div>
-            </div>
-            <!-- FIM: DIV do primeiro COLAPSE referente a data -->
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
 
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3
-                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum
-                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                        nulla
-                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                        nesciunt
-                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                        labore sustainable VHS.
+                            <div class="form-group">
+
+                                <!-- SELECT referente aos estados -->
+                                <h2 id="subtituloColapseEstado">Defina um estado para acontecer o casamento:</h2>
+                                <input type="text" id="cdEstado">
+
+                                <!-- SELECT referente as cidades -->
+                                <h2 id="subtituloColapseCidade">Defina uma cidade para acontecer o casamento:</h2>
+                                <input type="text" id="cdCidade">
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
-                        </button>
-                    </h5>
+                <!-- FIM: DIV do terceiro COLAPSE referente ao estado -->
+
+                <div id="divBtnLocalizar">
+                    <button id="btnLocalizar" type="submit" class="btn btn-primary"><b>Achar o lugar
+                            perfeito</b></button>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3
-                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum
-                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                        nulla
-                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                        nesciunt
-                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                        labore sustainable VHS.
-                    </div>
-                </div>
+
             </div>
-        </div>
+        </form>
 
     </div>
 
