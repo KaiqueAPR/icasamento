@@ -1,5 +1,5 @@
 /* Configurações do Body da página */
-body {
+#divContainer {
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,7 +19,6 @@ body {
     background: #FFFFFF;
 
     border-radius: 5%;
-    /*!!!!Voltar aqui para ver qual tipo de border radius ficaria melhor!!!!*/
 }
 
 /* Configurações do formulário de login */
@@ -112,4 +111,9 @@ body {
 .input-group .divTxCpf {
     flex: 1;
     margin-right: 10px;
+}
+
+#mensagemSenha {
+    color: red;
+    font-size: 0.8rem;
 }

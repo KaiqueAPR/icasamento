@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
             cdSenha,
         };
 
+        // Desativa a rolagem da página
+        document.body.style.overflow = "hidden";
+
         fetch("/login/entrar", {
             method: "POST",
             headers: {
@@ -28,14 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Redireciona para a página "home.html".
                     window.location.href = "home.html";
                 } else {
-                    console.error(data);
+                    Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "E-mail ou Senha estão incorretos",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+
                 }
             })
             .catch((error) => {
                 // Lidar com erros de solicitação.
                 console.error("Erro na solicitação:", error);
-                // Exibir uma mensagem de erro ou realizar outra ação apropriada.
             });
     });
 });
-

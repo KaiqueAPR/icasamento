@@ -1,0 +1,56 @@
+body {
+    overflow-y: hidden;
+}
+
+
+/* Configurações do Body da página */
+#divContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centralize horizontalmente */
+    align-items: center;
+    /* Centralize verticalmente */
+    width: 100vw;
+    /* 100% da largura da viewport */
+    height: 100vh;
+    /* 100% da altura da viewport */
+    background: #84B6F4;
+}
+
+/* Estilos para o título "iCasamento" */
+#iCasamentoTitulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+}
+
+#accordion {
+    justify-content: center;
+}
+
+#tituloColapseData, #tituloColapseConvidados, #tituloColapseLocalizacao {
+    font-size: 18px;
+}
+
+#divDtCasamento, #divNrConvidados {
+    text-align: center; 
+}
+
+#subtituloColapseData, #subtituloColapseConvidados, #subtituloColapseEstado, #subtituloColapseCidade {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#dtCasamento, #nrConvidados {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    float: none;
+}
+
+
+

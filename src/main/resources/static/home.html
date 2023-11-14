@@ -4,11 +4,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+
     <title>iCasamento - Home</title>
+
 </head>
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-primary" href="#"><b>iCasamento</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Achar o local perfeito
+                </button>
+            </form>
+
+        </div>
+    </nav>
+
+    <div id="divContainer">
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><b>Escolha o local perfeito</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <!-- DIV que se refere ao COLAPSE -->
+                            <div id="accordion">
+
+                                <!-- INICIO: DIV do primeiro COLAPSE referente a data -->
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne" type="button">
+                                                <b id="tituloColapseData">Escolher a Data</b>
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                        <div class="card-body" id="divDtCasamento">
+
+                                            <div>
+                                                <h2 id="subtituloColapseData">Defina uma data para o seu casamento:</h2>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="date" id="dtCasamento">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIM: DIV do primeiro COLAPSE referente a data -->
+
+                                <!-- INICIO: DIV do segundo COLAPSE referente a quantidade de convidados -->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo" type="button">
+                                                <b id="tituloColapseConvidados">Convidados</b>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body" id="divNrConvidados">
+
+                                            <div>
+                                                <h2 id="subtituloColapseConvidados">Defina a quantidade de convidados:
+                                                </h2>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control center" id="nrConvidados">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIM: DIV do segundo COLAPSE referente a quantidade de convidados -->
+
+                                <!-- INICIO: DIV do terceiro COLAPSE referente ao estado -->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree" type="button">
+                                                <b id="tituloColapseLocalizacao">Estado</b>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+
+                                            <div class="form-group">
+
+                                                <!-- SELECT referente aos estados -->
+                                                <h2 id="subtituloColapseEstado">Defina um estado para acontecer o
+                                                    casamento:</h2>
+                                                <input type="text" id="cdEstado" class="form-control">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIM: DIV do terceiro COLAPSE referente ao estado -->
+
+                                <!-- INICIO: DIV do quarto COLAPSE referente a cidade -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour" type="button">
+                                                <b id="tituloColapseLocalizacao">Cidade</b>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+
+                                            <div class="form-group">
+
+                                                <!-- SELECT referente as cidades -->
+                                                <h2 id="subtituloColapseCidade">Defina uma cidade para acontecer o
+                                                    casamento:</h2>
+                                                <input type="text" id="cdCidade" class="form-control">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="js/home.js"></script>
 </body>
 
 </html>
