@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "LOCAL_CASAMENTO")
-public class LocalCasamento {
+public class LocalCasamentoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LOCA_CD_LOCAL_CASAMENTO")
