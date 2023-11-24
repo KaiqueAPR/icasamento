@@ -20,7 +20,7 @@ function buscarCidades() {
         return;
     }
 
-    const apiUrl = `http://localhost:8080/cidade/buscar-cidades?termo=${termo}`;
+    const apiUrl = `/cidade/buscar-cidades?termo=${termo}`;
 
     fetch(apiUrl)
         .then(response => response.json())

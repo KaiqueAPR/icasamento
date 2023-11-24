@@ -22,6 +22,9 @@ public class CidadeController {
     @GetMapping("/buscar-cidades")
     public ResponseEntity<List<CidadeModel>> buscarCidades(@RequestParam String termo) {
         List<CidadeModel> cidades = cidadeService.buscarCidadesPorTermo(termo);
-        return ResponseEntity.ok(cidades);
+        if(!cidades.isEmpty()) {
+            return ResponseEntity.ok(cidades);
+        }
+        return ResponseEntity.ofNullable(cidades);
     }
 }

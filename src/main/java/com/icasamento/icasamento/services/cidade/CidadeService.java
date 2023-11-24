@@ -16,7 +16,6 @@ public class CidadeService {
         try {
             return cidadeRepository.findByNmCidadeContainingIgnoreCase(nmCidade);
         } catch (Exception e) {
-            // Log de erro ou tratamento adequado
             e.printStackTrace();
             throw new RuntimeException("Erro ao buscar cidades por termo: " + e.getMessage(), e);
         }
