@@ -62,3 +62,37 @@ function debounce(funcao, delay) {
         }, delay);
     };
 }
+
+//Chamada que retorna uma lista com todos os estados
+const apiUrl = '/estado/buscar-estados';
+const selectEstado = document.getElementById('nmEstado'); // Substitua 'txEstado' pelo ID real do seu campo de seleção
+
+// Configuração da requisição
+const requestOptions = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+};
+
+// Enviar a solicitação Fetch
+fetch(apiUrl, requestOptions)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erro na solicitação: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Preencher o campo de seleção com as siglas dos estados
+        data.forEach(estado => {
+            const option = document.createElement('option');
+            option.value = estado.cdEstado;
+            option.text = estado.sgEstado;
+            selectEstado.add(option);
+        });
+    })
+    .catch(error => {
+        console.error('Erro na solicitação:', error.message);
+        // Tratar erros, por exemplo, exibir uma mensagem de erro na tela
+    });

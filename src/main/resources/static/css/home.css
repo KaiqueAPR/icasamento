@@ -1,5 +1,5 @@
 body {
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 
@@ -51,7 +51,8 @@ body {
 }
 
 #dtCasamento,
-#nrConvidados {
+#nrConvidados,
+#nmEstado {
     width: 200px;
     padding: 5px;
     border: 1px solid #ccc;
