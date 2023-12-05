@@ -11,6 +11,5 @@ import java.util.List;
 @Repository
 public interface LocalCasamentoRepository extends JpaRepository<LocalCasamentoModel, Integer> {
 
-    @Query(value = "SELECT lc FROM LocalCasamentoModel lc WHERE 1=1 AND (:queryString IS NULL OR :queryString = '')")
-    List<LocalCasamentoModel> buscarLocaisCasamentoDinamico(@Param("queryString") String queryString);
+    List<LocalCasamentoModel> findByEstadoModelCdEstadoAndCidadeModelCdCidade(Integer estadoId,Integer cidadeId);
 }
