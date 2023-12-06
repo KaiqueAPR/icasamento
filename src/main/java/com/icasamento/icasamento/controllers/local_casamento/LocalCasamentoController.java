@@ -19,7 +19,7 @@ public class LocalCasamentoController {
     @Autowired
     private LocalCasamentoService localCasamentoService;
 
-    @GetMapping("/buscar-locais-casamento")
+    @PostMapping("/buscar-locais-casamento")
     public ResponseEntity<List<LocalCasamentoModel>> buscarLocaisCasamento(
             @RequestBody LocalCasamentoRequestDto localCasamentoRequestDto) {
         List<LocalCasamentoModel> locaisCasamento = localCasamentoService.buscarLocaisCasamento(localCasamentoRequestDto);
