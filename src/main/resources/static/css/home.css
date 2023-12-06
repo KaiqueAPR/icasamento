@@ -51,7 +51,8 @@ body {
 }
 
 #dtCasamento,
-#nrConvidados {
+#nrConvidados,
+#nmEstado {
     width: 200px;
     padding: 5px;
     border: 1px solid #ccc;
@@ -64,7 +65,7 @@ body {
 }
 
 #sugestoes {
-    overflow-y: hidden;
+    overflow-y: auto; 
     max-height: 150px;
     display: none;
 }

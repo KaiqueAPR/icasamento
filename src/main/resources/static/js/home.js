@@ -62,3 +62,81 @@ function debounce(funcao, delay) {
         }, delay);
     };
 }
+
+//Chamada que retorna uma lista com todos os estados
+const apiUrl = '/estado/buscar-estados';
+const selectEstado = document.getElementById('nmEstado'); // Substitua 'txEstado' pelo ID real do seu campo de seleção
+
+// Configuração da requisição
+const requestOptions = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+};
+
+// Enviar a solicitação Fetch
+fetch(apiUrl, requestOptions)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erro na solicitação: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Preencher o campo de seleção com as siglas dos estados
+        data.forEach(estado => {
+            const option = document.createElement('option');
+            option.value = estado.cdEstado;
+            option.text = estado.sgEstado;
+            selectEstado.add(option);
+        });
+    })
+    .catch(error => {
+        console.error('Erro na solicitação:', error.message);
+        // Tratar erros, por exemplo, exibir uma mensagem de erro na tela
+    });
+
+// Função para buscar locais de casamento
+function buscarLocaisCasamento() {
+    // Coletar os valores dos campos
+    const dtCasamento = document.getElementById('dtCasamento').value;
+    const qtdConvidados = document.getElementById('qtdConvidados').value;
+    const cdEstado = document.getElementById('cdEstado').value;
+    const cdCidade = document.getElementById('cdCidade').value;
+
+    // Criar o objeto LocalCasamentoRequestDto
+    const localCasamentoRequestDto = {
+        dtCasamento: dtCasamento,
+        qtdConvidados: qtdConvidados,
+        estadoModel: {
+            cdEstado: cdEstado
+        },
+        cidadeModel: {
+            cdCidade: cdCidade
+        }
+    };
+
+    // Enviar a requisição para o backend
+    const apiUrl = '/local-casamento/buscar-locais-casamento';
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(localCasamentoRequestDto),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na solicitação: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // falta fazer
+        })
+        .catch(error => console.error('Erro ao buscar locais de casamento:', error));
+}
+
+// Evento de clique no botão de pesquisa
+document.getElementById('btnPesquisar').addEventListener('click', buscarLocaisCasamento);
