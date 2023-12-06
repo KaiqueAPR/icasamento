@@ -10,6 +10,5 @@ import java.util.List;
 
 @Repository
 public interface LocalCasamentoRepository extends JpaRepository<LocalCasamentoModel, Integer> {
-
-    List<LocalCasamentoModel> findByEstadoModelCdEstadoAndCidadeModelCdCidade(Integer estadoId,Integer cidadeId);
+    List<LocalCasamentoModel> findByEstadoModelCdEstadoOrCidadeModelCdCidade(Integer estadoId,Integer cidadeId);
 }

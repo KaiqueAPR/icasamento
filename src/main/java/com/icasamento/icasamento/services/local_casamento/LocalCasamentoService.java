@@ -28,35 +28,43 @@ public class LocalCasamentoService {
 
     /*
      *@param LocalCasamentoRequestDto
-     *@return LocalCasamentoResponseDto
+     *@return List<LocalCasamentoModel>
      */
-
     public List<LocalCasamentoModel> buscarLocaisCasamento(LocalCasamentoRequestDto localCasamentoRequestDto) {
+        StringBuilder query = getStringBuilder(localCasamentoRequestDto);
+
+        TypedQuery<LocalCasamentoModel> typedQuery = entityManager.createQuery(query.toString(), LocalCasamentoModel.class);
+
+        // Adicione parâmetros à consulta apenas se os valores não forem nulos
+        if (localCasamentoRequestDto.getQtdConvidados() != null) {
+            typedQuery.setParameter("qtdConvidados", localCasamentoRequestDto.getQtdConvidados());
+        }
+        if (localCasamentoRequestDto.getEstadoModel() != null && localCasamentoRequestDto.getEstadoModel().getCdEstado() != null) {
+            typedQuery.setParameter("cdEstado", localCasamentoRequestDto.getEstadoModel().getCdEstado());
+        }
+        if (localCasamentoRequestDto.getCidadeModel() != null && localCasamentoRequestDto.getCidadeModel().getCdCidade() != null) {
+            typedQuery.setParameter("cdCidade", localCasamentoRequestDto.getCidadeModel().getCdCidade());
+        }
+        return typedQuery.getResultList();
+    }
+
+    private static StringBuilder getStringBuilder(LocalCasamentoRequestDto localCasamentoRequestDto) {
         StringBuilder query = new StringBuilder("SELECT lc FROM LocalCasamentoModel lc WHERE 1=1");
 
         EstadoModel estadoModel = localCasamentoRequestDto.getEstadoModel();
         CidadeModel cidadeModel = localCasamentoRequestDto.getCidadeModel();
 
+        if (localCasamentoRequestDto.getQtdConvidados() != null) {
+            query.append(" AND lc.qtdConvidados <= :qtdConvidados");
+        }
         // Se o campo do estado estiver preenchido, adiciona à consulta
-        if (estadoModel.getCdEstado() != null) {
+        if (localCasamentoRequestDto.getEstadoModel() != null && localCasamentoRequestDto.getEstadoModel().getCdEstado() != null) {
             query.append(" AND lc.estadoModel.cdEstado = :cdEstado");
         }
-
         // Se o campo da cidade estiver preenchido, adiciona à consulta
-        if (cidadeModel.getCdCidade() != null) {
+        if (localCasamentoRequestDto.getCidadeModel() != null && localCasamentoRequestDto.getCidadeModel().getCdCidade() != null) {
             query.append(" AND lc.cidadeModel.cdCidade = :cdCidade");
         }
-
-        TypedQuery<LocalCasamentoModel> typedQuery = entityManager.createQuery(query.toString(), LocalCasamentoModel.class);
-
-        // Adicione parâmetros à consulta se os valores não forem nulos
-        if (estadoModel.getCdEstado() != null) {
-            typedQuery.setParameter("cdEstado", estadoModel.getCdEstado());
-        }
-
-        if (cidadeModel.getCdCidade() != null) {
-            typedQuery.setParameter("cdCidade", cidadeModel.getCdCidade());
-        }
-        return typedQuery.getResultList();
+        return query;
     }
 }
