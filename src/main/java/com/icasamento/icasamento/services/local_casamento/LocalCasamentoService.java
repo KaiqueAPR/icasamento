@@ -1,8 +1,6 @@
 package com.icasamento.icasamento.services.local_casamento;
 
-import com.icasamento.icasamento.configs.exceptions.LocalCasamentoNotFound;
 import com.icasamento.icasamento.dtos.local_casamento.LocalCasamentoRequestDto;
-import com.icasamento.icasamento.dtos.local_casamento.LocalCasamentoResponseDto;
 import com.icasamento.icasamento.models.cidade.CidadeModel;
 import com.icasamento.icasamento.models.estado.EstadoModel;
 import com.icasamento.icasamento.models.local_casamento.LocalCasamentoModel;
@@ -11,8 +9,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
