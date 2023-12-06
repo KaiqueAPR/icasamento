@@ -133,9 +133,7 @@ function buscarLocaisCasamento() {
             return response.json();
         })
         .then(data => {
-            // Atualizar os dashboards no HTML com os dados retornados
-            // Você precisa implementar a lógica para isso
-            // Exemplo: exibirLocaisCasamentoNoDashboard(data);
+            // falta fazer
         })
         .catch(error => console.error('Erro ao buscar locais de casamento:', error));
 }
