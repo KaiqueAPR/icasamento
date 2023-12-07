@@ -4,10 +4,18 @@ const selectSugestoes = document.getElementById('sugestoes');
 nmCidade.addEventListener('input', debounce(buscarCidades, 300));
 
 selectSugestoes.addEventListener('change', function () {
+    const selectedOption = selectSugestoes.options[selectSugestoes.selectedIndex];
 
-    nmCidade.value = selectSugestoes.value;
-    // Ocultar o select após a seleção
-    selectSugestoes.style.display = 'none';
+    if (selectedOption) {
+        const selectedValue = selectedOption.value.split('-')[0];
+        nmCidade.value = selectedValue;
+        selectSugestoes.style.display = 'none';
+
+        // Atualizar o valor do campo oculto cdCidade com o valor selecionado
+        const selectedCdCidade = selectedOption.getAttribute('data-cdCidade');
+        document.getElementById('cdCidade').value = selectedCdCidade;
+        console.log("Valor do codigo da cidade: " + selectedCdCidade);
+    }
 });
 
 function buscarCidades() {
@@ -55,15 +63,7 @@ function exibirSugestoes(sugestoes) {
     selectSugestoes.style.display = 'block';
     // Ajustar a altura do select
     selectSugestoes.style.height = 'auto';
-
-    // Atualizar o valor do campo oculto cdCidade com o valor da primeira sugestão (ou trate conforme necessário)
-    if (sugestoes.length > 0) {
-        document.getElementById('cdCidade').value = sugestoes[0].cdCidade;
-        console.log("Valor do codigo da cidade: " + sugestoes[0].cdCidade);
-    }
 }
-
-
 // Função de debounce para evitar múltiplas chamadas durante a digitação rápida
 function debounce(funcao, delay) {
     let timeoutId;
@@ -75,9 +75,16 @@ function debounce(funcao, delay) {
     };
 }
 
-//Chamada que retorna uma lista com todos os estados
+// Chamada que retorna uma lista com todos os estados
 const apiUrl = '/estado/buscar-estados';
-const selectEstado = document.getElementById('nmEstado'); // Substitua 'txEstado' pelo ID real do seu campo de seleção
+const selectEstado = document.getElementById('nmEstado');
+
+
+// Adicionar uma opção vazia
+const optionVazia = document.createElement('option');
+optionVazia.value = '';
+optionVazia.text = '';
+selectEstado.add(optionVazia);
 
 // Configuração da requisição
 const requestOptions = {
@@ -109,6 +116,9 @@ fetch(apiUrl, requestOptions)
         // Tratar erros, por exemplo, exibir uma mensagem de erro na tela
     });
 
+// Evento de clique no botão de pesquisa
+document.getElementById('btnPesquisar').addEventListener('click', buscarLocaisCasamento);
+
 // Função para buscar locais de casamento
 function buscarLocaisCasamento() {
     // Coletar os valores dos campos
@@ -118,8 +128,6 @@ function buscarLocaisCasamento() {
     // Coletar o valor do estado
     const selectEstado = document.getElementById('nmEstado');
     const cdEstado = selectEstado.value;
-
-
 
     // Criar o objeto LocalCasamentoRequestDto
     const localCasamentoRequestDto = {
@@ -153,6 +161,3 @@ function buscarLocaisCasamento() {
         })
         .catch(error => console.error('Erro ao buscar locais de casamento:', error));
 }
-
-// Evento de clique no botão de pesquisa
-document.getElementById('btnPesquisar').addEventListener('click', buscarLocaisCasamento);
