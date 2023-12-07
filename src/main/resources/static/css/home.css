@@ -5,13 +5,11 @@
 
 }
 
-/* Outras regras de estilo existentes... */
 body {
     background-color: #84B6F4;
     overflow-x: hidden;
 }
 
-/* Configurações do Body da página */
 #divContainer {
     margin: 0;
     padding: 0;
