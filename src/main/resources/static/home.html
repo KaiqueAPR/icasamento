@@ -106,7 +106,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="text" class="form-control center" id="nrConvidados">
+                                                <input type="text" class="form-control center" id="qtdConvidados">
                                             </div>
 
                                         </div>
@@ -135,6 +135,7 @@
                                                 <h2 id="subtituloColapseEstado">Defina um estado para acontecer o
                                                     casamento:</h2>
                                                 <select id="nmEstado" class="form-select"></select>
+                                                <input type="hidden" id="cdEstado" name="cdEstado">
 
                                             </div>
 
@@ -164,6 +165,10 @@
                                                 <h2 id="subtituloColapseCidade">Defina uma cidade para acontecer o
                                                     casamento:</h2>
                                                 <input type="text" id="nmCidade" class="form-control">
+
+                                                <!-- Campo oculto para armazenar o valor do código -->
+                                                <input type="hidden" id="cdCidade" name="cdCidade">
+
                                                 <select id="sugestoes" class="form-select" size="10"></select>
 
                                             </div>
@@ -176,7 +181,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Pesquisar</button>
+                        <button type="submit" id="btnPesquisar" class="btn btn-primary">Pesquisar</button>
                     </div>
                 </div>
             </div>

@@ -43,6 +43,11 @@ function exibirSugestoes(sugestoes) {
         const option = document.createElement('option');
         option.value = `${sugestao.nmCidade}-${sugestao.sgEstado}`;
         option.text = `${sugestao.nmCidade} - ${sugestao.sgEstado}`;
+
+        const cdCidade = sugestao.cdCidade; // Declare a variável dentro do escopo do loop
+
+        option.setAttribute('data-cdCidade', cdCidade);
+
         selectSugestoes.add(option);
     });
 
@@ -50,7 +55,14 @@ function exibirSugestoes(sugestoes) {
     selectSugestoes.style.display = 'block';
     // Ajustar a altura do select
     selectSugestoes.style.height = 'auto';
+
+    // Atualizar o valor do campo oculto cdCidade com o valor da primeira sugestão (ou trate conforme necessário)
+    if (sugestoes.length > 0) {
+        document.getElementById('cdCidade').value = sugestoes[0].cdCidade;
+        console.log("Valor do codigo da cidade: " + sugestoes[0].cdCidade);
+    }
 }
+
 
 // Função de debounce para evitar múltiplas chamadas durante a digitação rápida
 function debounce(funcao, delay) {
@@ -102,8 +114,12 @@ function buscarLocaisCasamento() {
     // Coletar os valores dos campos
     const dtCasamento = document.getElementById('dtCasamento').value;
     const qtdConvidados = document.getElementById('qtdConvidados').value;
-    const cdEstado = document.getElementById('cdEstado').value;
     const cdCidade = document.getElementById('cdCidade').value;
+    // Coletar o valor do estado
+    const selectEstado = document.getElementById('nmEstado');
+    const cdEstado = selectEstado.value;
+
+
 
     // Criar o objeto LocalCasamentoRequestDto
     const localCasamentoRequestDto = {
@@ -114,7 +130,7 @@ function buscarLocaisCasamento() {
         },
         cidadeModel: {
             cdCidade: cdCidade
-        }
+        },
     };
 
     // Enviar a requisição para o backend
