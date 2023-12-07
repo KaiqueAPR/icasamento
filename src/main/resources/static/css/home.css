@@ -8,6 +8,15 @@
 body {
     background-color: #84B6F4;
     overflow-x: hidden;
+    padding-top: 56px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Certifique-se de que o z-index seja maior que o conteúdo da página */
 }
 
 #divContainer {
