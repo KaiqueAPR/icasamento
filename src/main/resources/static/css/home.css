@@ -1,7 +1,7 @@
 body {
-    overflow-y: hidden;
+    background-color: #84B6F4;
+    overflow-x: hidden;
 }
-
 
 /* Configurações do Body da página */
 #divContainer {
@@ -65,7 +65,11 @@ body {
 }
 
 #sugestoes {
-    overflow-y: auto; 
+    overflow-y: auto;
     max-height: 150px;
     display: none;
+}
+
+#containerAlbum {
+    padding-top: 25px;
 }

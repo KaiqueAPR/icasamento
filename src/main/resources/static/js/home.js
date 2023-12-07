@@ -119,6 +119,12 @@ fetch(apiUrl, requestOptions)
 // Evento de clique no botão de pesquisa
 document.getElementById('btnPesquisar').addEventListener('click', buscarLocaisCasamento);
 
+// Chamar buscarLocaisCasamento quando a página é carregada
+document.addEventListener('DOMContentLoaded', () => {
+    // Chamada inicial para carregar todos os álbuns
+    buscarLocaisCasamento();
+});
+
 // Função para buscar locais de casamento
 function buscarLocaisCasamento() {
     // Coletar os valores dos campos
@@ -157,7 +163,58 @@ function buscarLocaisCasamento() {
             return response.json();
         })
         .then(data => {
-            // falta fazer
+            // Preencher os álbuns com os dados retornados
+            popularAlbums(data);
         })
         .catch(error => console.error('Erro ao buscar locais de casamento:', error));
+
+    // Função para popular os álbuns com os dados
+    function popularAlbums(data) {
+        const containerAlbum = document.getElementById('containerAlbum');
+
+        // Limpar os álbuns existentes
+        containerAlbum.innerHTML = '';
+
+        // Verificar se há dados retornados
+        if (data && data.length > 0) {
+            // Iterar sobre os dados e criar cards para cada local
+            for (let i = 0; i < data.length; i += 3) {
+                // Criar uma nova linha a cada três álbuns
+                const row = document.createElement('div');
+                row.classList.add('row');
+
+                // Iterar sobre os próximos três álbuns ou menos se não houver mais
+                for (let j = i; j < i + 3 && j < data.length; j++) {
+                    const local = data[j];
+                    const card = criarCard(local);
+                    row.appendChild(card);
+                }
+
+                // Adicionar a linha ao contêiner dos álbuns
+                containerAlbum.appendChild(row);
+            }
+        } else {
+            // Caso não haja dados, exibir uma mensagem ou realizar outra ação apropriada
+            containerAlbum.innerHTML = '<p>Nenhum local encontrado.</p>';
+        }
+    }
+
+
+    // Função para criar um card com os dados do local
+    function criarCard(local) {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4');
+        card.innerHTML = `
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <p class="card-text"><b>${local.nmLocalCasamento}</b></p>
+                <div class="d-flex justify-content-between align-items-center">
+                <p class="card-text">${'Quantidade máxima de convidados: ' + local.qtdConvidados}</p>
+                <p class="card-text">${'Localização: ' + local.cidadeModel.nmCidade + ', ' + local.cidadeModel.sgEstado}</p>
+                </div>
+            </div>
+        </div>
+    `;
+        return card;
+    }
 }
