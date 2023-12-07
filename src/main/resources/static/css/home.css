@@ -1,3 +1,11 @@
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+/* Outras regras de estilo existentes... */
 body {
     background-color: #84B6F4;
     overflow-x: hidden;

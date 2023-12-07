@@ -199,22 +199,23 @@ function buscarLocaisCasamento() {
         }
     }
 
-
     // Função para criar um card com os dados do local
     function criarCard(local) {
         const card = document.createElement('div');
-        card.classList.add('col-md-4');
+        card.classList.add('col-md-4', 'col-sm-6'); // Adicionando classes de coluna para ajustar o layout responsivo
         card.innerHTML = `
         <div class="card mb-4 shadow-sm">
+            <a href="${local.txUrlRedeSocial}" target="_blank"> <!-- Adicionando o link à imagem -->
+                <img src="${local.txUrlImagem}" class="card-img-top" alt="Imagem do local">
+            </a>
             <div class="card-body">
-                <p class="card-text"><b>${local.nmLocalCasamento}</b></p>
-                <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-text">${local.nmLocalCasamento}</h5>
                 <p class="card-text">${'Quantidade máxima de convidados: ' + local.qtdConvidados}</p>
                 <p class="card-text">${'Localização: ' + local.cidadeModel.nmCidade + ', ' + local.cidadeModel.sgEstado}</p>
-                </div>
             </div>
         </div>
     `;
         return card;
     }
+
 }
