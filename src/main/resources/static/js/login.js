@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                if (data === true) {
+                if (data.retornoLogin === true) {
                     // Redireciona para a página "home.html".
                     window.location.href = "home.html";
                 } else {

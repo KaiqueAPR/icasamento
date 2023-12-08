@@ -1,9 +1,24 @@
-body {
-    overflow-y: hidden;
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
 }
 
+body {
+    background-color: #84B6F4;
+    overflow-x: hidden;
+    padding-top: 56px;
+}
 
-/* Configurações do Body da página */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Certifique-se de que o z-index seja maior que o conteúdo da página */
+}
+
 #divContainer {
     margin: 0;
     padding: 0;
@@ -65,7 +80,11 @@ body {
 }
 
 #sugestoes {
-    overflow-y: auto; 
+    overflow-y: auto;
     max-height: 150px;
     display: none;
+}
+
+#containerAlbum {
+    padding-top: 25px;
 }

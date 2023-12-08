@@ -33,4 +33,10 @@ public class LocalCasamentoModel {
     @ManyToOne
     @JoinColumn(name = "ESTA_CD_ESTADO")
     private EstadoModel estadoModel;
+
+    @Column(name = "LOCA_TX_URL_REDE_SOCIAL")
+    private String txUrlRedeSocial;
+
+    @Column(name = "LOCA_TX_URL_IMAGEM")
+    private String txUrlImagem;
 }
